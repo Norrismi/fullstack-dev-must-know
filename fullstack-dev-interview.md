@@ -1,9 +1,8 @@
-*** Explain event delegation:
-    When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
-    RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
+##EVENT DELEGATION:
+When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
+RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
 
-
-*** Explain how this works in JavaScript 
+##Explain how this works in JavaScript:
 
 Explain how prototypal inheritance works
 What do you think of AMD vs CommonJS?
