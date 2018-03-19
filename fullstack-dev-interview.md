@@ -101,6 +101,8 @@ Explain why the following doesn't work as an IIFE: function foo(){ }();.
 
 What needs to be changed to properly make it an IIFE?
 
+#####################################################
+
 #### WHAT IS THE DIFFERENCE BETWEEN A VARIABLE THAT IS: NULL AND UNDEFINED?
 
 They both indicate the absense of value. The key difference is: 
@@ -109,7 +111,8 @@ They both indicate the absense of value. The key difference is:
 Analogy: You are filling out an application form( at the DMV or Social Secirity office), you will write N/A or "not applicable" if the question is not relevant to you. This means that you have READ the question and wrote an answer(You assigned a value). But if you did not write anything, it means that you either did not know what to write, or most likely you did not even see the question. Similarly, if you do not assign a value to the variable, it returns 'undefined', if the variable has a value of 'null', then it means someone deliberately assigned 'null' value to it for whatever reason.
 So, 'null' is assigned, 'undefined' is not. 
 
-How would you go about checking for any of these states?
+
+#####################################################
 
 #### CAN YOU DESCRIBE THE MAIN DIFFERENCE BETWEEN A FOREACH() LOOP AND .MAP() LOOP
 #### AND WHY WOULD YOU PICK ONE VERSUS THE OTHER?
@@ -125,6 +128,9 @@ The answer is EFFICIENCY. If you are not interested in transforming an array int
 What's a typical use case for anonymous functions?
 
 How do you organize your code? (module pattern, classical inheritance?)
+
+
+#####################################################
 
 #### WHAT IS THE DIFFERENCE BETWEEN HOST OBJECTS AND NATIVE OBJECTS?
 - Host objects are inherent to the environment. For the browser, this includes objects like window, document. Since they depend from the ‘host’ (environment), the behaviour could be different!
@@ -143,12 +149,15 @@ Explain Function.prototype.bind.
 
 What's the difference between feature detection, feature inference, and using the UA string?
 
-### Explain Ajax in as much detail as possible.
+#####################################################
+
+#### Explain Ajax in as much detail as possible.
 
 AJAX = Asynchronous JavaScript And XML and is NOT a programming language. AJAX uses a combination of: *A browser built-in XMLHttpRequest object (to request data from a web server) and *JavaScript and HTML DOM (to display or use the data)
 AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page. 
 Imagine if Twitter or facebook loaded every time you "liked" or "commented" a post. AJAX lets us do some partial changes to the web page without reloading the whole page. If you "liked" or "commented" a post on facebook, instead of reloading the whole page immediately, it stages them and applies partial changes to the page. 
 
+#####################################################
 
 #### WHAT ARE THE ADVANTAGES AND DISADVANTAGES OF USING AJAX? 
 
@@ -161,7 +170,7 @@ With AJAX, as all functions are loaded on a dynamic page without the page being 
 *It is built on javascript
 While javascript is secure and has been heavily used by websites for a long period of time, a percentage of website surfers prefer to turn javascript functionality off on their browser rendering the AJAX application useless, a work around to this con is present as well, where the developer will need to code a parallel non-javascript version of the dynamic web page to cater to these users.
 
-
+#####################################################
 Explain how JSONP works (and how it's not really Ajax).
 
 Have you ever used JavaScript templating?
