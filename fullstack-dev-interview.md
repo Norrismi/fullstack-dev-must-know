@@ -101,7 +101,7 @@ Explain why the following doesn't work as an IIFE: function foo(){ }();.
 
 What needs to be changed to properly make it an IIFE?
 
-#### What's the difference between a variable that is: null, undefined or undeclared?
+#### WHAT IS THE DIFFERENCE BETWEEN A VARIABLE THAT IS: NULL AND UNDEFINED?
 
 They both indicate the absense of value. The key difference is: 
 - 'null' is assigned to the variable as a representation of no value. 
@@ -111,8 +111,8 @@ So, 'null' is assigned, 'undefined' is not.
 
 How would you go about checking for any of these states?
 
-#### Can you describe the main difference between a forEach loop and a .map() loop and 
-#### why you would pick one versus the other?
+#### CAN YOU DESCRIBE THE MAIN DIFFERENCE BETWEEN A FOREACH() LOOP AND .MAP() LOOP
+#### AND WHY WOULD YOU PICK ONE VERSUS THE OTHER?
 
 - forEach() allows a callback function to mutate the current array, it has side effects, it iterates over a list and applies some operation with side effects to each list member (such as saving each one to the database for example)
 - map() map iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (such as converting a list of strings to uppercase)
@@ -126,7 +126,14 @@ What's a typical use case for anonymous functions?
 
 How do you organize your code? (module pattern, classical inheritance?)
 
-What's the difference between host objects and native objects?
+#### WHAT IS THE DIFFERENCE BETWEEN HOST OBJECTS AND NATIVE OBJECTS?
+- Host objects are inherent to the environment. For the browser, this includes objects like window, document. Since they depend from the ‘host’ (environment), the behaviour could be different!
+
+*EXAMPLES: window, document, location, history,XMLHttpRequest, setTimeout, getElementsByTagName
+
+- Native objects are inherit from ECMAScript language and are built-in objects provided by JavaScript. So long as you’re writing in javascript you may always use them. It doesn’t matter if you are running Chrome, Firefox or Internet Explorer or even if you’re just in Node JS, you’ve got access to the native objects.
+
+*EXAMPLES: Object (constructor), Date, Math, parseInt, eval, string methods likeindexOf and replace, array methods, …
 
 Difference between: function Person(){}, var person = Person(), and var person = new Person()?
 
@@ -136,9 +143,24 @@ Explain Function.prototype.bind.
 
 What's the difference between feature detection, feature inference, and using the UA string?
 
-Explain Ajax in as much detail as possible.
+### Explain Ajax in as much detail as possible.
 
-What are the advantages and disadvantages of using Ajax?
+AJAX = Asynchronous JavaScript And XML and is NOT a programming language. AJAX uses a combination of: *A browser built-in XMLHttpRequest object (to request data from a web server) and *JavaScript and HTML DOM (to display or use the data)
+AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page. 
+Imagine if Twitter or facebook loaded every time you "liked" or "commented" a post. AJAX lets us do some partial changes to the web page without reloading the whole page. If you "liked" or "commented" a post on facebook, instead of reloading the whole page immediately, it stages them and applies partial changes to the page. 
+
+
+#### WHAT ARE THE ADVANTAGES AND DISADVANTAGES OF USING AJAX? 
+
+- Advantages:  
+*AJAX allows easier and quicker interaction between user and website as pages are not reloaded for content to be displayed. *Easier navigation: AJAX applications on websites can be built to allow easier navigation to users in comparison to using the traditional back and forward button on a browser.
+
+- Disadvantages:
+*The back and refresh button are rendered useless
+With AJAX, as all functions are loaded on a dynamic page without the page being reloaded or more importantly a URL being changed (except for a hash symbol maybe), clicking the back or refresh button would take you to an entirely different web page or to the beginning of what your dynamic web page was processing. This is the main drawback behind AJAX but fortunately with good programming skills this issue can be fixed.
+*It is built on javascript
+While javascript is secure and has been heavily used by websites for a long period of time, a percentage of website surfers prefer to turn javascript functionality off on their browser rendering the AJAX application useless, a work around to this con is present as well, where the developer will need to code a parallel non-javascript version of the dynamic web page to cater to these users.
+
 
 Explain how JSONP works (and how it's not really Ajax).
 
