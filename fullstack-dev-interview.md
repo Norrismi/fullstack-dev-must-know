@@ -1,12 +1,51 @@
-## EVENT DELEGATION:
+
+EVENT DELEGATION:
 
 When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of 
 them – we put a single handler on their common ancestor.
 RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
 
-## Explain how this works in JavaScript:
+
+- CLOSURE:
+A closure is an inner function that has access to the outer function's variables in addition to it's own 
+variables and global variables. The inner function has access not only to the outer function's variables, 
+but also to the outer function's parameters. You create a closure by adding a function inside another function. 
 
 ```
+const data = "Beck";
+
+const addNumbers = (a, b) => {
+  let returnValue = "the result is: ";
+  
+  const add = () => {
+    return data + ', ' + returnValue + (a + b);
+  }
+  return add();
+}
+
+const result = addNumbers(5, 10);
+
+console.log(result) // Result is: 15
+
+
+// #################
+
+// const addNumbers = (a, b) => {
+//   let returnValue = "Result is: ";
+  
+//   const add = () => {
+//     return returnValue + (a + b);
+//   }
+//   return add;
+// }
+
+// const result = addNumbers(5, 10);
+// const newFunc = result();
+
+// console.log(newFunc)
+```
+
+## Explain how this works in JavaScript:
 Explain how prototypal inheritance works
 What do you think of AMD vs CommonJS?
 Explain why the following doesn't work as an IIFE: function foo(){ }();.
@@ -66,4 +105,4 @@ Can you give an example of a curry function and why this syntax offers an advant
 What are the benefits of using spread syntax and how is it different from rest syntax?
 How can you share code between files?
 Why you might want to create static class members?
-```
+
