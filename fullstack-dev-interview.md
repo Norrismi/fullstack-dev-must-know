@@ -1,12 +1,13 @@
 
-EVENT DELEGATION:
+#### EVENT DELEGATION:
 
 When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of 
 them – we put a single handler on their common ancestor.
 RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
 
+#####################################################
 
-CLOSURE:
+#### CLOSURE:
 
 A closure is an inner function that has access to the outer function's variables in addition to it's own 
 variables and global variables. The inner function has access not only to the outer function's variables, 
@@ -29,7 +30,7 @@ const result = addNumbers(5, 10);
 console.log(result) // Result is: 15
 
 
-// #################
+//*************************************
 
 // const addNumbers = (a, b) => {
 //   let returnValue = "Result is: ";
@@ -46,7 +47,10 @@ console.log(result) // Result is: 15
 // console.log(newFunc)
 ```
 
-VIRTUAL DOM:
+#####################################################
+
+
+#### VIRTUAL DOM:
 
 Let's say that you have a list that contains ten items. You check off the first item. Most JavaScript 
 frameworks would rebuild the entire list. That's ten times more work than necessary! Only one item changed, 
@@ -85,7 +89,9 @@ The entire virtual DOM gets updated.
 
 
 
-Explain how this works in JavaScript:
+
+
+
 
 Explain how prototypal inheritance works
 
