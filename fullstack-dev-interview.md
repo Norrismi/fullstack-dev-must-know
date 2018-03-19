@@ -46,6 +46,45 @@ console.log(result) // Result is: 15
 // console.log(newFunc)
 ```
 
+VIRTUAL DOM:
+
+Let's say that you have a list that contains ten items. You check off the first item. Most JavaScript 
+frameworks would rebuild the entire list. That's ten times more work than necessary! Only one item changed, 
+but the remaining nine get rebuilt exactly how they were before.
+
+React's Virtual DOM solves this problem by updating only the parts where changes have been applied and leaves the rest 
+of the items untouched. 
+
+In React, for every DOM object, there is a corresponding "virtual DOM object." A virtual DOM object 
+is a representation of a DOM object, like a lightweight copy. Manipulating the DOM is slow. Manipulating 
+the virtual DOM is much faster, because nothing gets drawn onscreen. Think of manipulating the virtual 
+DOM as editing a blueprint, as opposed to moving rooms in an actual house. When you render a JSX element, 
+every single virtual DOM object gets updated.
+
+This sounds incredibly inefficient, but the cost is insignificant because the virtual DOM can update so quickly.
+
+Once the virtual DOM has updated, then React compares the virtual DOM with a virtual DOM snapshot 
+that was taken right before the update.
+
+By comparing the new virtual DOM with a pre-update version, React figures out exactly which virtual DOM 
+objects have changed. This process is called "diffing".
+
+Once React knows which virtual DOM objects have changed, then React updates those objects, and only those objects, 
+on the real DOM. React would be smart enough to rebuild your one checked-off list-item, and leave the rest of your list alone.
+
+This makes a big difference! React can update only the necessary parts of the DOM. React's reputation for performance comes largely from this innovation.
+
+In summary, here's what happens when you try to update the DOM in React:
+
+The entire virtual DOM gets updated.
+- The virtual DOM gets compared to what it looked like before you updated it. React figures out which objects have changed.
+- The changed objects, and the changed objects only, get updated on the real DOM.
+- Changes on the real DOM cause the screen to change.
+(This material is taken from https://www.codecademy.com/articles/react-virtual-dom ).
+
+
+
+
 Explain how this works in JavaScript:
 
 Explain how prototypal inheritance works
