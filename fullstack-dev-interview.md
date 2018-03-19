@@ -101,14 +101,26 @@ Explain why the following doesn't work as an IIFE: function foo(){ }();.
 
 What needs to be changed to properly make it an IIFE?
 
-What's the difference between a variable that is: null, undefined or undeclared?
+#### What's the difference between a variable that is: null, undefined or undeclared?
+
+They both indicate the absense of value. The key difference is: 
+- 'null' is assigned to the variable as a representation of no value. 
+- 'undefined': a variable has been declared but has not yet been assigned a value.
+Analogy: You are filling out an application form( at the DMV or Social Secirity office), you will write N/A or "not applicable" if the question is not relevant to you. This means that you have READ the question and wrote an answer(You assigned a value). But if you did not write anything, it means that you either did not know what to write, or most likely you did not even see the question. Similarly, if you do not assign a value to the variable, it returns 'undefined', if the variable has a value of 'null', then it means someone deliberately assigned 'null' value to it for whatever reason.
+So, 'null' is assigned, 'undefined' is not. 
 
 How would you go about checking for any of these states?
 
-What is a closure, and how/why would you use one?
+#### Can you describe the main difference between a forEach loop and a .map() loop and 
+#### why you would pick one versus the other?
 
-Can you describe the main difference between a forEach loop and a .map() loop and 
-why you would pick one versus the other?
+- forEach() allows a callback function to mutate the current array, it has side effects, it iterates over a list and applies some operation with side effects to each list member (such as saving each one to the database for example)
+- map() map iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (such as converting a list of strings to uppercase)
+
+Why does forEach() exist when it does not return a value and if we can do the same thing with map()?:
+The answer is EFFICIENCY. If you are not interested in transforming an array into another array, why should you compute the transformed array? Only to dump it? Of course not! If you don't want a transformation, you shouldn't do a transformation.
+
+
 
 What's a typical use case for anonymous functions?
 
