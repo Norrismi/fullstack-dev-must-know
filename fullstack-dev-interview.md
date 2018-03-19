@@ -237,24 +237,118 @@ Explain the differences on the usage of foo between function foo() {} and var fo
 
 What are the differences between variables created using let, var or const?
 
-What are the differences between ES6 class and ES5 function constructors?
+### What are the differences between ES6 class and ES5 function constructors?
+https://medium.freecodecamp.org/learn-es6-the-dope-way-part-v-classes-browser-compatibility-transpiling-es6-code-47f62267661
 
-Can you offer a use case for the new arrow => function syntax? 
-How does this new syntax differ from other functions?
+* What are the main differences? Clearly the class syntax looks like an object, but remember that actually it’s still a function and behaves so.
+* Another main difference is anything you want to store must be within a constructor method. Any prototype method of the class should be inside of that class, but outside of the constructor, without writing ‘.prototype’, and in ES6 function syntax.
+### Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?
+https://codeutopia.net/blog/2015/01/06/es6-what-are-the-benefits-of-the-new-features-in-practice/
 
-What advantage is there for using the arrow syntax for a method in a constructor?
+* Declaring Functions in the ES6 syntax
+  ***How does it differ?***
+  * allows functions to be a single line and eliminates some of the older syntax. 
+  * Arrow syntax automatically binds this to the surrounding code’s context
+  * The syntax allows an implicit return when there is no body block, resulting in shorter and simpler code in some cases
+  * Last but not least, => is shorter and simpler than function, although stylistic issues are often subjective
+### What advantage is there for using the arrow syntax for a method in a constructor?
+https://codeutopia.net/blog/2015/01/06/es6-what-are-the-benefits-of-the-new-features-in-practice/
 
-What is the definition of a higher-order function?
+* Arrow syntax automatically binds this to the surrounding code’s context
+### What is the definition of a higher-order function?
+https://www.sitepoint.com/higher-order-functions-javascript/
 
-Can you give an example for destructuring an object or an array?
+* A higher-order function is a function that can take another function as an argument, or that returns a function as a result
+### Can you give an example for destructuring an object or an array?
+http://wesbos.com/destructuring-objects/
 
-ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
+```JS
+const person = {
+  first: 'Wes',
+  last: 'Bos',
+  country: 'Canada',
+  city: 'Hamilton',
+  twitter: '@wesbos'
+};
+const first = person.first;
+const last = person.last;
 
-Can you give an example of a curry function and why this syntax offers an advantage?
+const = {first, last} = person
+```
+### ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
+https://www.codewars.com/kata/create-phone-number/train/javascript/5a78d660fd8c06bd7e000100
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
-What are the benefits of using spread syntax and how is it different from rest syntax?
+* Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them. They were called "template strings" in prior editions of the ES2015 specification.
+* To escape a back-tick in a template literal, put a backslash \ before the back-tick.
 
-How can you share code between files?
+```JS
+function createPhoneNumber(num){
+return `(${num[0]}${num[1]}${num[2]}) ${num[3]}${num[4]}${num[5]}-${num[6]}${num[7]}${num[8]}${num[9]}`
 
-Why you might want to create static class members?
+(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]), "(123) 456-7890");
+}
+```
+### Can you give an example of a curry function and why this syntax offers an advantage?
+https://www.youtube.com/watch?v=iZLP4qOwY8I
+https://hughfdjackson.com/javascript/why-curry-helps/
 
+```JS
+let dragon = 
+  name =>
+    size => 
+      element => 
+        name + ' is a ' +
+        size + ' dragon that breathes ' +
+        element + '!'
+        
+let output = dragon('Karo')('large')('ice')
+console.log(output)
+```
+***Benefits***
+  * Little pieces can be configured and reused with ease, without clutter;
+  * Functions are used throughout.
+  * Enables more reusable code. 
+  
+  * Another advantage of this approach is that it encourages the creation of functions; rather than of methods. While methods are beautiful things - allowing polymorphism, and very readable code - they aren’t always the tool for the job, such as in heavily async code.
+
+### What are the benefits of using spread syntax and how is it different from rest syntax?
+https://codeutopia.net/blog/2015/01/06/es6-what-are-the-benefits-of-the-new-features-in-practice/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+* ***Benefits*** Much more readable at a glance, You can immediately tell this function can take any number of args. And even better, we don’t need the boilerplate for using arguments.
+* Any argument in the argument list can use spread syntax and it can be used multiple times.
+* When copying arrays, it helps to eleminate methods such as push, splice and concat
+* ***how is it different from rest?*** Rest syntax looks exactly like spread syntax, but is used for destructuring arrays and objects. In a way, rest syntax is the opposite of spread syntax: spread 'expands' an array into its elements, while rest collects multiple elements and 'condenses' them into a single element. 
+
+### How can you share code between files?
+https://medium.com/@thejasonfile/a-simple-intro-to-javascript-imports-and-exports-389dd53c3fac
+
+* Javascript helps us out with this by having ***‘imports’ and ‘exports’.*** This is how you can write code in one file and share that code so it can be used by another file or files.
+* Ask the interviewer for clarification, there is an outside chance they are looking for knowledge of Git/Github. 
+
+### Why you might want to create static class members?
+https://javascript.info/class
+
+* In react we use static classes all of the time.
+* Static methods are used when we need a function bound to a class, but not to any object of that class.
+* Another example would be a so-called “factory” method
+
+```JS
+
+class Article {
+      constructor(title, date) {
+        this.title = title;
+        this.date = date;
+      }
+    
+      static createTodays() {
+        // remember, this = Article
+        return new this("Today's digest", new Date());
+      }
+    }
+    
+    let article = Article.createTodays();
+```
+
+* Now every time we need to create a today’s digest, we can call Article.createTodays(). Once again, that’s not a method of an article, but a method of the whole class.
