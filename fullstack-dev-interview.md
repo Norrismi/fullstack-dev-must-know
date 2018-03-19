@@ -7,6 +7,7 @@ RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
 
 
 CLOSURE:
+
 A closure is an inner function that has access to the outer function's variables in addition to it's own 
 variables and global variables. The inner function has access not only to the outer function's variables, 
 but also to the outer function's parameters. You create a closure by adding a function inside another function. 
