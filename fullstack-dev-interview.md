@@ -1,5 +1,5 @@
 
-#### EVENT DELEGATION:
+## EVENT DELEGATION:
 
 When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of 
 them – we put a single handler on their common ancestor.
@@ -7,7 +7,7 @@ RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
 
 #####################################################
 
-#### CLOSURE:
+## CLOSURE:
 
 A closure is an inner function that has access to the outer function's variables in addition to it's own 
 variables and global variables. The inner function has access not only to the outer function's variables, 
@@ -50,7 +50,7 @@ console.log(result) // Result is: 15
 #####################################################
 
 
-#### VIRTUAL DOM:
+## VIRTUAL DOM:
 
 Let's say that you have a list that contains ten items. You check off the first item. Most JavaScript 
 frameworks would rebuild the entire list. That's ten times more work than necessary! Only one item changed, 
@@ -103,7 +103,7 @@ What needs to be changed to properly make it an IIFE?
 
 #####################################################
 
-#### WHAT IS THE DIFFERENCE BETWEEN A VARIABLE THAT IS: NULL AND UNDEFINED?
+## WHAT IS THE DIFFERENCE BETWEEN: NULL AND UNDEFINED?
 
 They both indicate the absense of value. The key difference is: 
 - 'null' is assigned to the variable as a representation of no value. 
@@ -114,8 +114,8 @@ So, 'null' is assigned, 'undefined' is not.
 
 #####################################################
 
-#### CAN YOU DESCRIBE THE MAIN DIFFERENCE BETWEEN A FOREACH() LOOP AND .MAP() LOOP
-#### AND WHY WOULD YOU PICK ONE VERSUS THE OTHER?
+## CAN YOU DESCRIBE DIFFERENCE BETWEEN A FOREACH() AND .MAP()
+### AND WHY WOULD YOU PICK ONE VERSUS THE OTHER?
 
 - forEach() allows a callback function to mutate the current array, it has side effects, it iterates over a list and applies some operation with side effects to each list member (such as saving each one to the database for example)
 - map() map iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (such as converting a list of strings to uppercase)
@@ -132,7 +132,7 @@ How do you organize your code? (module pattern, classical inheritance?)
 
 #####################################################
 
-#### WHAT IS THE DIFFERENCE BETWEEN HOST OBJECTS AND NATIVE OBJECTS?
+## WHAT IS THE DIFFERENCE BETWEEN HOST OBJECTS AND NATIVE OBJECTS?
 - Host objects are inherent to the environment. For the browser, this includes objects like window, document. Since they depend from the ‘host’ (environment), the behaviour could be different!
 
 *EXAMPLES: window, document, location, history,XMLHttpRequest, setTimeout, getElementsByTagName
@@ -151,7 +151,7 @@ What's the difference between feature detection, feature inference, and using th
 
 #####################################################
 
-#### Explain Ajax in as much detail as possible.
+## Explain Ajax in as much detail as possible.
 
 AJAX = Asynchronous JavaScript And XML and is NOT a programming language. AJAX uses a combination of: *A browser built-in XMLHttpRequest object (to request data from a web server) and *JavaScript and HTML DOM (to display or use the data)
 AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page. 
@@ -159,7 +159,7 @@ Imagine if Twitter or facebook loaded every time you "liked" or "commented" a po
 
 #####################################################
 
-#### WHAT ARE THE ADVANTAGES AND DISADVANTAGES OF USING AJAX? 
+## WHAT ARE THE ADVANTAGES AND DISADVANTAGES OF USING AJAX? 
 
 - Advantages:  
 *AJAX allows easier and quicker interaction between user and website as pages are not reloaded for content to be displayed. *Easier navigation: AJAX applications on websites can be built to allow easier navigation to users in comparison to using the traditional back and forward button on a browser.
