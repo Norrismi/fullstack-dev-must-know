@@ -288,6 +288,7 @@ language that compiles to JavaScript?
 * Postman (when you need to check the server response)
 * Webpack -  you most likely used the 'watchmode' - Webpack will watch your files and when one of them changes, it will immediately rerun the build and recreate your output file. For more information on how to install and use, visit here: 
 https://medium.com/javascript-training/beginner-s-guide-to-webpack-b1f1a3638460
+- https://medium.com/@interdigitizer/5-debugging-tools-every-javascript-programmer-should-know-and-use-38575141689c
 
 What language constructions do you use for iterating over object properties and array items?
 
