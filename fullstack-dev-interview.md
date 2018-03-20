@@ -1,22 +1,20 @@
 
-## EVENT DELEGATION:
+### EVENT DELEGATION:
 
-
-```
 When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of <br> them – we put a single handler on their common ancestor.
 them – we put a single handler on their common ancestor.
 
-RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
+RESOURCE: https://www.youtube.com/watch?v=6NMSCh3DJug
 
 #####################################################
 
-## CLOSURE:
+### CLOSURE:
 
 A closure is an inner function that has access to the outer function's variables in addition to it's own 
 variables and global variables. The inner function has access not only to the outer function's variables, 
 but also to the outer function's parameters. You create a closure by adding a function inside another function. 
 
-```
+``` 
 const data = "Beck";
 
 const addNumbers = (a, b) => {
@@ -48,12 +46,13 @@ console.log(result) // Result is: 15
 // const newFunc = result();
 
 // console.log(newFunc)
+
 ```
 
 #####################################################
 
 
-## VIRTUAL DOM:
+### VIRTUAL DOM:
 
 Let's say that you have a list that contains ten items. You check off the first item. Most JavaScript 
 frameworks would rebuild the entire list. That's ten times more work than necessary! Only one item changed, 
@@ -81,7 +80,7 @@ on the real DOM. React would be smart enough to rebuild your one checked-off lis
 
 This makes a big difference! React can update only the necessary parts of the DOM. React's reputation for performance comes largely from this innovation.
 
-In summary, here's what happens when you try to update the DOM in React:
+***In summary, here's what happens when you try to update the DOM in React:***
 
 The entire virtual DOM gets updated.
 - The virtual DOM gets compared to what it looked like before you updated it. React figures out which objects have changed.
@@ -111,7 +110,7 @@ What needs to be changed to properly make it an IIFE?
 They both indicate the absense of value. The key difference is: 
 - 'null' is assigned to the variable as a representation of no value. 
 - 'undefined': a variable has been declared but has not yet been assigned a value.
-Analogy: You are filling out an application form( at the DMV or Social Secirity office), you will write N/A or "not applicable" if the question is not relevant to you. This means that you have READ the question and wrote an answer(You assigned a value). But if you did not write anything, it means that you either did not know what to write, or most likely you did not even see the question. Similarly, if you do not assign a value to the variable, it returns 'undefined', if the variable has a value of 'null', then it means someone deliberately assigned 'null' value to it for whatever reason.
+* Analogy: You are filling out an application form( at the DMV or Social Secirity office), you will write N/A or "not applicable" if the question is not relevant to you. This means that you have READ the question and wrote an answer(You assigned a value). But if you did not write anything, it means that you either did not know what to write, or most likely you did not even see the question. Similarly, if you do not assign a value to the variable, it returns 'undefined', if the variable has a value of 'null', then it means someone deliberately assigned 'null' value to it for whatever reason.
 So, 'null' is assigned, 'undefined' is not. 
 
 
@@ -123,7 +122,7 @@ So, 'null' is assigned, 'undefined' is not.
 - forEach() allows a callback function to mutate the current array, it has side effects, it iterates over a list and applies some operation with side effects to each list member (such as saving each one to the database for example)
 - map() map iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (such as converting a list of strings to uppercase)
 
-Why does forEach() exist when it does not return a value and if we can do the same thing with map()?:
+- Why does forEach() exist when it does not return a value and if we can do the same thing with map()?:
 The answer is EFFICIENCY. If you are not interested in transforming an array into another array, why should you compute the transformed array? Only to dump it? Of course not! If you don't want a transformation, you shouldn't do a transformation.
 
 
@@ -138,11 +137,11 @@ How do you organize your code? (module pattern, classical inheritance?)
 ## WHAT IS THE DIFFERENCE BETWEEN HOST OBJECTS AND NATIVE OBJECTS?
 - Host objects are inherent to the environment. For the browser, this includes objects like window, document. Since they depend from the ‘host’ (environment), the behaviour could be different!
 
-*EXAMPLES: window, document, location, history,XMLHttpRequest, setTimeout, getElementsByTagName
+* EXAMPLES: window, document, location, history,XMLHttpRequest, setTimeout, getElementsByTagName
 
 - Native objects are inherit from ECMAScript language and are built-in objects provided by JavaScript. So long as you’re writing in javascript you may always use them. It doesn’t matter if you are running Chrome, Firefox or Internet Explorer or even if you’re just in Node JS, you’ve got access to the native objects.
 
-*EXAMPLES: Object (constructor), Date, Math, parseInt, eval, string methods likeindexOf and replace, array methods, …
+* EXAMPLES: Object (constructor), Date, Math, parseInt, eval, string methods likeindexOf and replace, array methods, …
 
 Difference between: function Person(){}, var person = Person(), and var person = new Person()?
 
@@ -156,22 +155,24 @@ What's the difference between feature detection, feature inference, and using th
 
 ## Explain Ajax in as much detail as possible.
 
-AJAX = Asynchronous JavaScript And XML and is NOT a programming language. AJAX uses a combination of: *A browser built-in XMLHttpRequest object (to request data from a web server) and *JavaScript and HTML DOM (to display or use the data)
-AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page. 
-Imagine if Twitter or facebook loaded every time you "liked" or "commented" a post. AJAX lets us do some partial changes to the web page without reloading the whole page. If you "liked" or "commented" a post on facebook, instead of reloading the whole page immediately, it stages them and applies partial changes to the page. 
+AJAX = Asynchronous JavaScript And XML and is NOT a programming language. AJAX uses a combination of: 
+* A browser built-in XMLHttpRequest object (to request data from a web server) and 
+* JavaScript and HTML DOM (to display or use the data)
+- AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page. Imagine if Twitter or facebook loaded every time you "liked" or "commented" a post. AJAX lets us do some partial changes to the web page without reloading the whole page. If you "liked" or "commented" a post on facebook, instead of reloading the whole page immediately, it stages them and applies partial changes to the page. 
 
 #####################################################
 
 ## WHAT ARE THE ADVANTAGES AND DISADVANTAGES OF USING AJAX? 
 
-- Advantages:  
-*AJAX allows easier and quicker interaction between user and website as pages are not reloaded for content to be displayed. *Easier navigation: AJAX applications on websites can be built to allow easier navigation to users in comparison to using the traditional back and forward button on a browser.
+***- Advantages:***  
+* AJAX allows easier and quicker interaction between user and website as pages are not reloaded for content to be displayed. 
+* Easier navigation: AJAX applications on websites can be built to allow easier navigation to users in comparison to using the traditional back and forward button on a browser.
 
-- Disadvantages:
-*The back and refresh button are rendered useless
-With AJAX, as all functions are loaded on a dynamic page without the page being reloaded or more importantly a URL being changed (except for a hash symbol maybe), clicking the back or refresh button would take you to an entirely different web page or to the beginning of what your dynamic web page was processing. This is the main drawback behind AJAX but fortunately with good programming skills this issue can be fixed.
-*It is built on javascript
-While javascript is secure and has been heavily used by websites for a long period of time, a percentage of website surfers prefer to turn javascript functionality off on their browser rendering the AJAX application useless, a work around to this con is present as well, where the developer will need to code a parallel non-javascript version of the dynamic web page to cater to these users.
+***- Disadvantages:***
+* The back and refresh button are rendered useless
+- With AJAX, as all functions are loaded on a dynamic page without the page being reloaded or more importantly a URL being changed (except for a hash symbol maybe), clicking the back or refresh button would take you to an entirely different web page or to the beginning of what your dynamic web page was processing. This is the main drawback behind AJAX but fortunately with good programming skills this issue can be fixed.
+* It is built on javascript
+- While javascript is secure and has been heavily used by websites for a long period of time, a percentage of website surfers prefer to turn javascript functionality off on their browser rendering the AJAX application useless, a work around to this con is present as well, where the developer will need to code a parallel non-javascript version of the dynamic web page to cater to these users.
 
 #####################################################
 Explain how JSONP works (and how it's not really Ajax).
@@ -215,9 +216,9 @@ Make this work:
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 
 ### Why is it called a Ternary operator, what does the word "Ternary" indicate?
-*The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as a shortcut for the if statement.
+* The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as a shortcut for the if statement.
 What is "use strict";? what are the advantages and disadvantages to using it?
-*"Ternary" means: in mathematics it means using three as a base.
+* "Ternary" means: in mathematics it means using three as a base.
 
 ### Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, 
 ### "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
@@ -249,12 +250,9 @@ The most notable difference between a regular website and an SPA is the reduced 
 - Single-page App Cons
 It’s important to be aware of its cons, including:
 
-*The browser does most of the heavy lifting, which means performance can be a problem — especially on less capable mobile devices.
-Careful thought must be put into search engine optimization (SEO) so your content can be discoverable by search engines and social media websites that provide a link preview.
+* The browser does most of the heavy lifting, which means performance can be a problem — especially on less capable mobile devices. Careful thought must be put into search engine optimization (SEO) so your content can be discoverable by search engines and social media websites that provide a link preview.
 Mitigating Cons With Server-side Rendering
-Most modern JavaScript frameworks are working on ways to handle server-side rendering of SPAs — meaning the user would get a fully populated page when the SPA is loaded for the first time, instead of, for example, seeing a loading indicator.
-
-Server-side rendering can alleviate some of the burden browsers have to go through when rendering pages, and will also help with the problem of SEO and content discoverability.
+Most modern JavaScript frameworks are working on ways to handle server-side rendering of SPAs — meaning the user would get a fully populated page when the SPA is loaded for the first time, instead of, for example, seeing a loading indicator. Server-side rendering can alleviate some of the burden browsers have to go through when rendering pages, and will also help with the problem of SEO and content discoverability.
 
 What is the extent of your experience with Promises and/or their polyfills?
 
@@ -277,9 +275,9 @@ Source: http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-nee
 
 
 ***Callbacks can represent multiple events, promises represent at most one***
-*Callbacks can be called multiple times by the functions they are passed to.
+* Callbacks can be called multiple times by the functions they are passed to.
 
-*Promises can only represent one event – they are either successful once, or failed once.
+* Promises can only represent one event – they are either successful once, or failed once.
 
 What are some of the advantages/disadvantages of writing JavaScript code in a 
 language that compiles to JavaScript?
