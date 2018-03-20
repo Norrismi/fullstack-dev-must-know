@@ -181,6 +181,10 @@ If so, what libraries have you used?
 Hoisting is JavaScript's default behavior of moving declarations to the top. In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared. Variable declarations and function declarations are processed before any code is executed. So, declaring any variable or a function anywhere in the code is equivalent to declaring them at the top. 
 
 - For more explanation, please follow the link: https://www.youtube.com/watch?v=HOIu3owCcZs
+Different behaviors are explained when 'let' and 'const' get hoisted in these blogs:
+- https://medium.freecodecamp.org/what-is-variable-hoisting-differentiating-between-var-let-and-const-in-es6-f1a70bb43d
+- https://medium.freecodecamp.org/function-hoisting-hoisting-interview-questions-b6f91dbc2be8
+
 
 
 Describe event bubbling.
@@ -236,11 +240,41 @@ Why is it, in general, a good idea to leave the global scope of a website as-is 
 Why would you use something like the load event? Does this event have disadvantages? 
 Do you know any alternatives, and why would you use those?
 
-Explain what a single page app is and how to make one SEO-friendly.
+### Explain what a single page app is and how to make one SEO-friendly.
+The most notable difference between a regular website and an SPA is the reduced amount of page refreshes. SPAs have a heavier usage of AJAX — a way to communicate with back-end servers without doing a full page refresh — to get data loaded into our application. As a result, the process of rendering pages happens mostly on the client-side.
+
+- Single-page App Cons
+It’s important to be aware of its cons, including:
+
+*The browser does most of the heavy lifting, which means performance can be a problem — especially on less capable mobile devices.
+Careful thought must be put into search engine optimization (SEO) so your content can be discoverable by search engines and social media websites that provide a link preview.
+Mitigating Cons With Server-side Rendering
+Most modern JavaScript frameworks are working on ways to handle server-side rendering of SPAs — meaning the user would get a fully populated page when the SPA is loaded for the first time, instead of, for example, seeing a loading indicator.
+
+Server-side rendering can alleviate some of the burden browsers have to go through when rendering pages, and will also help with the problem of SEO and content discoverability.
 
 What is the extent of your experience with Promises and/or their polyfills?
 
-What are the pros and cons of using Promises instead of callbacks?
+### What are the pros and cons of using Promises instead of callbacks?
+***Callbacks are functions, promises are objects***
+*Callbacks are just blocks of code which can be run in response to events such as as timers going off or messages being received from the server. Any function can be a callback, and every callback is a function.
+
+*Promises are objects which store information about whether or not those events have happened yet, and if they have, what their outcome is.
+
+***Callbacks are passed as arguments, promises are returned***
+*Callbacks are defined independently of the functions they are called from – they are passed in as arguments. These functions then store the callback, and call it when the event actually happens.
+
+*Promises are created inside of asynchronous functions (those which might not return a response until later), and then returned. When an event happens, the asynchronous function will update the promise to notify the outside world.
+
+***Callbacks handle success and failure, promises don’t handle anything***
+*Callbacks are generally called with information on whether an operation succeeded or failed, and must be able to handle both scenarios.
+
+*Promises don’t handle anything by DEFAULT, but success and failure handlers are attached later.
+
+***Callbacks can represent multiple events, promises represent at most one***
+*Callbacks can be called multiple times by the functions they are passed to.
+
+*Promises can only represent one event – they are either successful once, or failed once.
 
 What are some of the advantages/disadvantages of writing JavaScript code in a 
 language that compiles to JavaScript?
