@@ -300,15 +300,48 @@ What are the pros and cons of immutability?
 
 How can you achieve immutability in your own code?
 
-Explain the difference between synchronous and asynchronous functions.
+### Explain the difference between synchronous and asynchronous functions.
+https://www.bisque.com/products/orchestrate/RASCOMHelp/RASCOM/Synchronous_vs_Asynchronous_Execution.htm
 
-What is event loop?
+* The difference comes down to the time it takes to execute a function. 
+  * Synchronous program execution - Your program is executed line by line, one line at a time. Each time a function is called, program execution waits until that function returns before continuing to the next line of code.
+  * This method of execution can have undesirable ramifications. Suppose a function is called to start a time consuming process. What if you want to stop the lengthy process? With synchronous execution, your program is “stuck,” waiting for the process to end, with no way out.
+  * Asynchronous execution avoids this bottleneck. You are essentially saying, “I know this function call is going to take a great deal of time, but my program doesn’t want to wait around while it executes.”
 
-What is the difference between call stack and task queue?
 
-Explain the differences on the usage of foo between function foo() {} and var foo = function() {}
+### What is event loop?
+https://hackernoon.com/understanding-js-the-event-loop-959beae3ac40
 
-What are the differences between variables created using let, var or const?
+* This is a constantly running process that checks if the call stack is empty. Imagine it like a clock and every time it ticks it looks at the Call Stack and if it is empty it looks into the Event Queue. If there is something in the event queue that is waiting it is moved to the call stack. If not, then nothing happens.
+
+### What is the difference between call stack and task queue?
+https://stackoverflow.com/questions/33874419/difference-between-call-stack-and-task-queue
+
+* A job queue (sometimes batch queue), is a data structure maintained by job scheduler software containing jobs to run.
+* A call stack is a stack data structure that stores information about the active subroutines of a computer program. This kind of stack is also known as an execution stack, control stack, run-time stack, or machine stack, and is often shortened to just "the stack".
+
+* So in short, a job queue is a queue of things to do (usually stored persistant) and a call stack is a stack of routines.
+
+### Explain the differences on the usage of foo between var functionOne = function() {} and functionTwo foo() {}
+https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname
+
+* The difference is that functionOne is a function expression and so only defined when that line is reached, whereas functionTwo is a function declaration and is defined as soon as its surrounding function or script is executed (due to hoisting).
+* This also means you can't conditionally define functions using function declarations:
+
+```JS
+if (test) {
+   // Error or misbehavior
+   function functionThree() { doSomething(); }
+}
+```
+* The above actually defines functionThree irrespective of test's value — unless use strict is in effect, in which case it simply raises an error.
+
+### What are the differences between variables created using let, var or const?
+
+* The largest difference between the three variables is scope. 
+  * var - The scope of a JavaScript variable declared with var is its current execution context. The scope of a JavaScript        variable declared outside the function is global.
+  * let -The let statement declares a local variable in a block scope. It is similar to var, in that we can optionally            initialize the variable.
+  * const - const statement values can be assigned once and they cannot be reassigned. The scope of const statement works         similar to let statements.
 
 ### What are the differences between ES6 class and ES5 function constructors?
 https://medium.freecodecamp.org/learn-es6-the-dope-way-part-v-classes-browser-compatibility-transpiling-es6-code-47f62267661
