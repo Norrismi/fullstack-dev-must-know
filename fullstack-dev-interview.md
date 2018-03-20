@@ -1,8 +1,11 @@
 
 ## EVENT DELEGATION:
 
-When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of 
+
+```
+When we have a lot of elements handled in a similar way, then instead of assigning a handler to each of <br> them – we put a single handler on their common ancestor.
 them – we put a single handler on their common ancestor.
+
 RESOURSE: https://www.youtube.com/watch?v=6NMSCh3DJug
 
 #####################################################
