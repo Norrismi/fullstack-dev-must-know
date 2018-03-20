@@ -177,7 +177,11 @@ Have you ever used JavaScript templating?
 
 If so, what libraries have you used?
 
-Explain "hoisting".
+### Explain "hoisting".
+Hoisting is JavaScript's default behavior of moving declarations to the top. In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared. Variable declarations and function declarations are processed before any code is executed. So, declaring any variable or a function anywhere in the code is equivalent to declaring them at the top. 
+
+- For more explanation, please follow the link: https://www.youtube.com/watch?v=HOIu3owCcZs
+
 
 Describe event bubbling.
 
@@ -187,19 +191,45 @@ Why is extending built-in JavaScript objects not a good idea?
 
 Difference between document load event and document DOMContentLoaded event?
 
-What is the difference between == and ===?
+### What is the difference between == and ===?
+* Abstract equality will attempt to resolve the data types via type coercion before making a comparison. 
+* Strict equality will return false if the types are different.
+```
+console.log(3 == "3"); // true
+console.log(3 === "3"); // false.
+**********
+console.log("This is a string." == new String("This is a string.")); // true
+console.log("This is a string." === new String("This is a string.")); // false
+```
 
 Explain the same-origin policy with regards to JavaScript.
 
 Make this work:
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 
-Why is it called a Ternary operator, what does the word "Ternary" indicate?
-
+### Why is it called a Ternary operator, what does the word "Ternary" indicate?
+*The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as a shortcut for the if statement.
 What is "use strict";? what are the advantages and disadvantages to using it?
+*"Ternary" means: in mathematics it means using three as a base.
 
-Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, 
-"buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
+### Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, 
+### "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
+```
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+fizzBuzz(100);
+```
 
 Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 
