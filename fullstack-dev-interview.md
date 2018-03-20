@@ -257,19 +257,21 @@ What is the extent of your experience with Promises and/or their polyfills?
 
 ### What are the pros and cons of using Promises instead of callbacks?
 ***Callbacks are functions, promises are objects***
-*Callbacks are just blocks of code which can be run in response to events such as as timers going off or messages being received from the server. Any function can be a callback, and every callback is a function.
+Source: http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-need-to-avoid-callback-hell/
+* Callbacks are just blocks of code which can be run in response to events such as as timers going off or messages being received from the server. Any function can be a callback, and every callback is a function.
 
-*Promises are objects which store information about whether or not those events have happened yet, and if they have, what their outcome is.
+* Promises are objects which store information about whether or not those events have happened yet, and if they have, what their outcome is.
 
 ***Callbacks are passed as arguments, promises are returned***
-*Callbacks are defined independently of the functions they are called from – they are passed in as arguments. These functions then store the callback, and call it when the event actually happens.
+* Callbacks are defined independently of the functions they are called from – they are passed in as arguments. These functions then store the callback, and call it when the event actually happens.
 
-*Promises are created inside of asynchronous functions (those which might not return a response until later), and then returned. When an event happens, the asynchronous function will update the promise to notify the outside world.
+* Promises are created inside of asynchronous functions (those which might not return a response until later), and then returned. When an event happens, the asynchronous function will update the promise to notify the outside world.
 
 ***Callbacks handle success and failure, promises don’t handle anything***
-*Callbacks are generally called with information on whether an operation succeeded or failed, and must be able to handle both scenarios.
+* Callbacks are generally called with information on whether an operation succeeded or failed, and must be able to handle both scenarios.
 
-*Promises don’t handle anything by DEFAULT, but success and failure handlers are attached later.
+* Promises don’t handle anything by DEFAULT, but success and failure handlers are attached later.
+
 
 ***Callbacks can represent multiple events, promises represent at most one***
 *Callbacks can be called multiple times by the functions they are passed to.
@@ -279,7 +281,12 @@ What is the extent of your experience with Promises and/or their polyfills?
 What are some of the advantages/disadvantages of writing JavaScript code in a 
 language that compiles to JavaScript?
 
-What tools and techniques do you use debugging JavaScript code?
+### What tools and techniques do you use debugging JavaScript code?
+* Chrome DevTools - Debugger
+* React Developer Tools - if you need to check 'state' and 'prop' values on ReactJS application. 
+* Postman (when you need to check the server response)
+* Webpack -  you most likely used the 'watchmode' - Webpack will watch your files and when one of them changes, it will immediately rerun the build and recreate your output file. For more information on how to install and use, visit here: 
+https://medium.com/javascript-training/beginner-s-guide-to-webpack-b1f1a3638460
 
 What language constructions do you use for iterating over object properties and array items?
 
