@@ -279,9 +279,19 @@ Source: http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-nee
 
 * Promises can only represent one event – they are either successful once, or failed once.
 
-What are some of the advantages/disadvantages of writing JavaScript code in a 
-language that compiles to JavaScript?
+### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+https://www.quora.com/What-are-some-of-the-advantages-disadvantages-of-writing-JavaScript-code-in-a-language-that-compiles-to-JavaScript
+http://andrewyan.logdown.com/posts/643979-front-end-job-interview-questions
 
+***Advantages***
+  * Many (most?) transpiled languages give you classes, inheritance and sometimes interfaces.
+  * JS vague typing and type guessing (“inference”) is a menace with a large code base. 
+  * The newest of language features.
+  
+***Disadvantages***
+  * You’ll probably need webpack or gulp to automate all your transpiling and bundling.
+  * The number of developers familiar with what you are doing is smaller.
+  
 ### What tools and techniques do you use debugging JavaScript code?
 * Chrome DevTools - Debugger
 * React Developer Tools - if you need to check 'state' and 'prop' values on ReactJS application. 
@@ -291,14 +301,32 @@ https://medium.com/javascript-training/beginner-s-guide-to-webpack-b1f1a3638460
 - https://medium.com/@interdigitizer/5-debugging-tools-every-javascript-programmer-should-know-and-use-38575141689c
 
 What language constructions do you use for iterating over object properties and array items?
+http://2ality.com/2011/04/iterating-over-arrays-and-objects-in.html
+https://medium.com/@nupoor_neha/javascript-front-end-interview-questions-1cbc5e32792b
 
-Explain the difference between mutable and immutable objects.
+***Array***
+  * for loop, map, filter, reduce, foreach
+***Object***
+  * for...of, for...in
 
-What is an example of an immutable object in JavaScript?
+### Explain the difference between mutable and immutable objects.
+https://www.sitepoint.com/immutability-javascript/
+http://andrewyan.logdown.com/posts/643979-front-end-job-interview-questions
 
-What are the pros and cons of immutability?
-
-How can you achieve immutability in your own code?
+The text-book definition of mutability is liable or subject to change or alteration. In programming, we use the word to mean objects whose state is allowed to change over time. An immutable value is the exact opposite – after it has been created, it can never change.
+***What is an example of an immutable object in JavaScript?***
+    * Numbers and String are immutable in JS. 
+    ```JS
+    var statement = "I am an immutable value";
+    var otherStr = statement.slice(8, 17);
+    ```
+    * The second line in no way changes the string in statement. In fact, no string methods change the string they operate on, they all return new strings. The reason is that strings are immutable – they cannot change, we can only ever make new strings.
+    
+***What are the pros and cons of immutability?***
+    * Immutable object won't be changed after it has been initialized. We can take advantage of this. Making immutable objects into a collection of cache since these objects don't change at all. Our program is actually accessing the same data. This is a good approach to saving memory by taking advantage of immutable. The downside of immutability is that it actually involving constantly deep clone and assigning. This is an overhead of trading computing speed for memory.
+    
+***How can you achieve immutability in your own code?***
+    * To achieve immutability on array or object or any type you want, you have to do deep clone, or simply use library like mori or immutable.js developed by Facebook.
 
 ### Explain the difference between synchronous and asynchronous functions.
 https://www.bisque.com/products/orchestrate/RASCOMHelp/RASCOM/Synchronous_vs_Asynchronous_Execution.htm
